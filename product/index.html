@@ -4,77 +4,599 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netzilo - Product</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-button {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #1e40af;
+            color: white;
+        }
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #3b82f6;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <div class="container mx-auto px-4 py-12">
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="bg-slate-800 border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="#" class="text-blue-400 border-b-2 border-blue-400 px-3 py-2 rounded-md text-sm font-medium">Product</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 class="text-4xl font-bold mb-8 text-center">Netzilo Core Components</h1>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4">Enterprise Workspace</h2>
-                <p class="mb-4">Secure, isolated enclave on user devices that separates corporate applications from personal environments.</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Data-in-Use Protection</li>
-                    <li>Granular Security Controls</li>
-                    <li>Self-Defending & Ephemeral</li>
+        <!-- Core Components Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all" onclick="showTab('workspace')">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Enterprise Workspace</h2>
+                <p class="text-gray-400 text-sm mb-4">Secure, isolated enclave on user devices that separates corporate applications from personal environments.</p>
+                <ul class="text-sm text-gray-300 space-y-1">
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Data-in-Use Protection</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Granular Security Controls</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Self-Defending & Ephemeral</li>
                 </ul>
             </div>
             
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4">Enterprise Browser</h2>
-                <p class="mb-4">Standalone secure browsing environment with complete isolation from other applications.</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Complete Security Isolation</li>
-                    <li>Centralized Management</li>
-                    <li>Consistent User Experience</li>
+            <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all" onclick="showTab('browser')">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Enterprise Browser</h2>
+                <p class="text-gray-400 text-sm mb-4">Standalone secure browsing environment with complete isolation from other applications.</p>
+                <ul class="text-sm text-gray-300 space-y-1">
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Complete Security Isolation</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Centralized Management</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Consistent User Experience</li>
                 </ul>
             </div>
             
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4">Browser Extension</h2>
-                <p class="mb-4">Transform existing browsers into secure enterprise browsers with advanced security controls.</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Fine-Grained DLP Controls</li>
-                    <li>SaaS and AI Governance</li>
-                    <li>Multi-Browser Compatibility</li>
+            <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all" onclick="showTab('extension')">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Browser Extension</h2>
+                <p class="text-gray-400 text-sm mb-4">Transform existing browsers into secure enterprise browsers with advanced security controls.</p>
+                <ul class="text-sm text-gray-300 space-y-1">
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Fine-Grained DLP Controls</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> SaaS and AI Governance</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Multi-Browser Compatibility</li>
                 </ul>
             </div>
             
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4">Disposable Browser</h2>
-                <p class="mb-4">Fully sandboxed browser environment for one-time secure sessions that vanish upon closing.</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>One-Session Browser</li>
-                    <li>Robust Web Threat Containment</li>
-                    <li>RBI-like Protection Locally</li>
+            <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all" onclick="showTab('disposable-browser')">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Disposable Browser</h2>
+                <p class="text-gray-400 text-sm mb-4">Fully sandboxed browser environment for one-time secure sessions that vanish upon closing.</p>
+                <ul class="text-sm text-gray-300 space-y-1">
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> One-Session Browser</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Robust Web Threat Containment</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> RBI-like Protection Locally</li>
                 </ul>
             </div>
             
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4">Disposable Network</h2>
-                <p class="mb-4">Zero-trust overlay network that replaces traditional VPN infrastructure with ephemeral connections.</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>VPN Replacement</li>
-                    <li>Resource-Based Access Control</li>
-                    <li>End-to-End Encryption</li>
+            <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all" onclick="showTab('network')">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Disposable Network</h2>
+                <p class="text-gray-400 text-sm mb-4">Zero-trust overlay network that replaces traditional VPN infrastructure with ephemeral connections.</p>
+                <ul class="text-sm text-gray-300 space-y-1">
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> VPN Replacement</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Resource-Based Access Control</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> End-to-End Encryption</li>
                 </ul>
             </div>
             
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4">Resources</h2>
-                <p class="mb-4">Comprehensive documentation, guides, and support resources for successful deployment.</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Getting Started Guide</li>
-                    <li>API Reference</li>
-                    <li>Security Whitepaper</li>
+            <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all" onclick="showTab('resources')">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Resources</h2>
+                <p class="text-gray-400 text-sm mb-4">Comprehensive documentation, guides, and support resources for successful deployment.</p>
+                <ul class="text-sm text-gray-300 space-y-1">
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Getting Started Guide</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> API Reference</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Security Whitepaper</li>
                 </ul>
             </div>
         </div>
-        
-        <div class="text-center">
-            <a href="/" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md">Back to Home</a>
+
+        <!-- Enterprise Product Details Section -->
+        <div class="bg-slate-800 border border-slate-700 rounded-lg p-8">
+            <h2 class="text-3xl font-bold mb-8 text-center">Enterprise Product Details</h2>
+            
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8 border-b border-slate-700">
+                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700 active" onclick="showTab('workspace')">Enterprise Workspace</button>
+                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('browser')">Enterprise Browser</button>
+                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('extension')">Browser Extension</button>
+                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('disposable-browser')">Disposable Browser</button>
+                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('network')">Disposable Network</button>
+                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('resources')">Additional Resources</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <!-- Enterprise Workspace Content -->
+            <div id="workspace-content" class="tab-content active">
+                <div class="bg-slate-700/50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-bold">Enterprise Workspace</h3>
+                    </div>
+                    
+                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Disposable Endpoint Enclave</h4>
+                    <p class="text-gray-300 mb-8">The Enterprise Workspace creates a secure, isolated enclave on the user's device that encloses corporate applications (email, CRM, collaboration) separate from the personal environment. This disposable, self-defending workspace runs locally but remains isolated from the host OS, creating a safe haven for sensitive activity.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Data-in-Use Protection</h5>
+                            </div>
+                            <p class="text-gray-400">Corporate apps execute inside the enclave, where data is inaccessible to the host machine. Even if malware infects the personal side, it cannot reach into the workspace. Sensitive files never touch the unsecured host disk.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Granular Security Controls</h5>
+                            </div>
+                            <p class="text-gray-400">Fine-grained policy controls for copy-paste, printing and screen capture can be selectively blocked. Optional watermarks can overlay the workspace apps to discourage photography and trace leaks.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Self-Defending & Ephemeral</h5>
+                            </div>
+                            <p class="text-gray-400">The workspace is ephemeral – use it when needed and it's disposed when not. Integrity checks run continuously; if any tampering or injection attack is detected, Netzilo will automatically shut down the enclave to contain the threat.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Zero Trust Architecture</h5>
+                            </div>
+                            <p class="text-gray-400">The design assumes zero trust in the endpoint: even keyloggers are rendered ineffective by isolating input streams. When the workspace is closed it self-destructs – wiping any encrypted documents or cached data so nothing persists on the device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enterprise Browser Content -->
+            <div id="browser-content" class="tab-content">
+                <div class="bg-slate-700/50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-bold">Enterprise Browser</h3>
+                    </div>
+                    
+                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Standalone Secure Browsing Environment</h4>
+                    <p class="text-gray-300 mb-8">The Enterprise Browser is a standalone "island" solution that provides a complete secure browsing environment. Unlike the browser extension approach, this is a fully contained application that launches independently and provides access to business-critical applications while maintaining strict security controls.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Integrated Application Structure</h5>
+                            </div>
+                            <p class="text-gray-400">The Enterprise Browser includes a built-in application structure that provides direct access to business-critical web applications from within a secure environment, eliminating the need to rely on external browsers.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Complete Security Isolation</h5>
+                            </div>
+                            <p class="text-gray-400">As a standalone solution, the Enterprise Browser maintains complete isolation from other applications and processes on the system, providing enhanced protection against cross-application attacks and data leakage.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Consistent User Experience</h5>
+                            </div>
+                            <p class="text-gray-400">The Enterprise Browser provides a uniform, controlled interface across all users and devices, ensuring consistent policy enforcement and reducing user confusion when accessing corporate resources.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Centralized Management</h5>
+                            </div>
+                            <p class="text-gray-400">The entire browser environment can be managed centrally, with updates, security policies, and configurations pushed out uniformly to all instances, simplifying IT administration and ensuring security compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Browser Extension Content -->
+            <div id="extension-content" class="tab-content">
+                <div class="bg-slate-700/50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-bold">Enterprise Browser Extension</h3>
+                    </div>
+                    
+                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Transform Any Browser into a Secure Enterprise Browser</h4>
+                    <p class="text-gray-300 mb-8">The Enterprise Browser Extension turns users' existing browsers (Chrome, Edge, Firefox, etc.) into secure enterprise browsers on demand. Unlike the standalone Enterprise Browser, this approach leverages the browsers already installed on client devices, enhancing them with enterprise-grade security controls.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Fine-Grained DLP Controls</h5>
+                            </div>
+                            <p class="text-gray-400">Restrict file downloads from certain domains, mask or redact sensitive data on the fly, and selectively disable copy/paste or printing content from internal web apps. Every protected page can be marked with a custom watermark to deter leaks.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">SaaS and AI Governance</h5>
+                            </div>
+                            <p class="text-gray-400">The Enterprise Browser extension monitors interactions with SaaS and web-based AI in real time. Advanced safeguards prevent prompt-injection attacks in generative AI platforms – protecting against malicious instructions hidden in AI outputs or forms.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Multi-Browser Compatibility</h5>
+                            </div>
+                            <p class="text-gray-400">Works with all major browsers including Chrome, Edge, Firefox, and others, allowing organizations to support user preferences while maintaining security. This eliminates the need to force users to adopt a new browser.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Transparent User Experience</h5>
+                            </div>
+                            <p class="text-gray-400">Maintains familiarity by using the browser environments users already know, with security controls that become active only when needed. The extension injects security without altering the look and feel of websites.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disposable Browser Content -->
+            <div id="disposable-browser-content" class="tab-content">
+                <div class="bg-slate-700/50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-bold">Disposable Browser</h3>
+                    </div>
+                    
+                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Ephemeral Sandboxed Browsing</h4>
+                    <p class="text-gray-300 mb-8">Netzilo's Disposable Browser is a fully sandboxed browser environment that opens for one-time secure sessions and vanishes upon closing. It provides an isolated browsing session for visiting websites or SaaS apps that require extra caution, ensuring nothing from the session can harm the endpoint or leak data.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">One-Session Browser</h5>
+                            </div>
+                            <p class="text-gray-400">Users can initiate a disposable browser for high-risk activities. The entire browser instance is temporary – history, cookies, cached files and even malware that might land during the session all disappear when you're done.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Robust Web Threat Containment</h5>
+                            </div>
+                            <p class="text-gray-400">Because it's isolated from the main OS, any malicious site or zero-day exploit encountered in the Disposable Browser cannot escape the sandbox. If a website tries to drop ransomware or a trojan, it gets confined to the throwaway browser which is completely discarded after use.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">RBI-like Protection Locally</h5>
+                            </div>
+                            <p class="text-gray-400">Provides RBI-like (Remote Browser Isolation) protection locally without the latency of cloud isolation – a seamless experience with none of the risk.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Seamless User Experience</h5>
+                            </div>
+                            <p class="text-gray-400">Netzilo integrates this ephemeral browser smoothly into user workflows. The user may see a brief animation indicating a secure session is launching, then they interact with the site normally. Upon closing that window, they're back to their regular environment, with no trace of the session left behind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disposable Network Content -->
+            <div id="network-content" class="tab-content">
+                <div class="bg-slate-700/50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-bold">Disposable Network</h3>
+                    </div>
+                    
+                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Zero-Trust Overlay Network</h4>
+                    <p class="text-gray-300 mb-8">Netzilo's Disposable Network creates a secure, ephemeral connection layer that replaces traditional VPN infrastructure with a zero-trust approach. It provides secure access to corporate resources while maintaining strict isolation and security controls.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">VPN Replacement</h5>
+                            </div>
+                            <p class="text-gray-400">Solves VPN replacement challenges by providing secure access to corporate resources without the complexity and performance limitations of traditional VPN solutions.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Resource-Based Access Control</h5>
+                            </div>
+                            <p class="text-gray-400">Implements fine-grained access controls based on user identity, device status, and resource sensitivity, ensuring users can only access what they need and nothing more.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">End-to-End Encryption</h5>
+                            </div>
+                            <p class="text-gray-400">All network traffic is secured with strong encryption from endpoint to resource, preventing unauthorized access or data interception even on untrusted networks.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-xl font-semibold">Dynamic Network Segmentation</h5>
+                            </div>
+                            <p class="text-gray-400">Creates secure network segments on-demand that isolate applications and resources based on sensitivity and user context, reducing the attack surface and preventing lateral movement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Resources Content -->
+            <div id="resources-content" class="tab-content">
+                <div class="bg-slate-700/50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-bold">Additional Resources</h3>
+                    </div>
+                    
+                    <h4 class="text-2xl font-semibold text-blue-400 mb-8">Comprehensive Documentation and Support</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <h5 class="text-xl font-semibold mb-4">Technical Documentation</h5>
+                            <p class="text-gray-400 mb-4">Access comprehensive guides, API documentation, and implementation best practices in our detailed technical library. Our documentation covers everything from initial setup to advanced configuration scenarios.</p>
+                            <a href="#" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                Browse Documentation 
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <h5 class="text-xl font-semibold mb-4">Implementation Guides</h5>
+                            <p class="text-gray-400 mb-4">Step-by-step guides for deploying Netzilo in various enterprise environments, including integration with existing security infrastructure, identity providers, and IT management systems.</p>
+                            <a href="#" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                View Implementation Guides 
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <h5 class="text-xl font-semibold mb-4">Case Studies</h5>
+                            <p class="text-gray-400 mb-4">Real-world examples of how organizations across various industries have successfully implemented Netzilo to solve their security challenges and achieve business outcomes.</p>
+                            <a href="#" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                Read Case Studies 
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <div class="bg-slate-800 rounded-lg p-6">
+                            <h5 class="text-xl font-semibold mb-4">Video Tutorials</h5>
+                            <p class="text-gray-400 mb-4">Watch demonstrations and tutorials that show Netzilo in action, including setup procedures, administrative tasks, and end-user workflows.</p>
+                            <a href="#" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                Watch Tutorials 
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            // Show selected tab content
+            const selectedContent = document.getElementById(tabName + '-content');
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+            
+            // Add active class to corresponding button
+            buttons.forEach(button => {
+                if (button.textContent.toLowerCase().includes(tabName.replace('-', ' ')) || 
+                    (tabName === 'workspace' && button.textContent.includes('Enterprise Workspace')) ||
+                    (tabName === 'browser' && button.textContent === 'Enterprise Browser') ||
+                    (tabName === 'extension' && button.textContent.includes('Browser Extension')) ||
+                    (tabName === 'disposable-browser' && button.textContent.includes('Disposable Browser')) ||
+                    (tabName === 'network' && button.textContent.includes('Disposable Network')) ||
+                    (tabName === 'resources' && button.textContent.includes('Additional Resources'))) {
+                    button.classList.add('active');
+                }
+            });
+            
+            // Scroll to the Enterprise Product Details section
+            document.querySelector('.bg-slate-800.border.border-slate-700.rounded-lg.p-8').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Initialize with Enterprise Workspace tab
+        document.addEventListener('DOMContentLoaded', function() {
+            showTab('workspace');
+        });
+    </script>
 </body>
-</html>
+</html> 
