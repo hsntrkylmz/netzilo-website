@@ -726,7 +726,7 @@
     </footer>
 
     <script>
-        function showTab(tabName) {
+        function showTab(tabName, shouldScroll = true) {
             // Hide all tab contents
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
@@ -754,13 +754,15 @@
                 }
             });
             
-            // Scroll to the Enterprise Product Details section
-            document.querySelector('.bg-slate-800.border.border-slate-700.rounded-lg.p-8').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Only scroll if explicitly requested (when user clicks a tab button or card)
+            if (shouldScroll) {
+                document.querySelector('.bg-slate-800.border.border-slate-700.rounded-lg.p-8').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
         
-        // Initialize with Enterprise Workspace tab
+        // Initialize with Enterprise Workspace tab (without scrolling)
         document.addEventListener('DOMContentLoaded', function() {
-            showTab('workspace');
+            showTab('workspace', false);
         });
 
         function toggleMobileMenu() {
