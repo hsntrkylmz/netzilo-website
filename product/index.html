@@ -735,13 +735,13 @@
             
             // Add active class to corresponding button
             buttons.forEach(button => {
-                if (button.textContent.toLowerCase().includes(tabName.replace('-', ' ')) || 
-                    (tabName === 'workspace' && button.textContent.includes('Enterprise Workspace')) ||
-                    (tabName === 'browser' && button.textContent === 'Enterprise Browser') ||
-                    (tabName === 'extension' && button.textContent.includes('Browser Extension')) ||
-                    (tabName === 'disposable-browser' && button.textContent.includes('Disposable Browser')) ||
-                    (tabName === 'network' && button.textContent.includes('Disposable Network')) ||
-                    (tabName === 'resources' && button.textContent.includes('Additional Resources'))) {
+                const buttonText = button.textContent.trim();
+                if ((tabName === 'workspace' && buttonText === 'Enterprise Workspace') ||
+                    (tabName === 'browser' && buttonText === 'Enterprise Browser') ||
+                    (tabName === 'extension' && buttonText === 'Browser Extension') ||
+                    (tabName === 'disposable-browser' && buttonText === 'Disposable Browser') ||
+                    (tabName === 'network' && buttonText === 'Disposable Network') ||
+                    (tabName === 'resources' && buttonText === 'Additional Resources')) {
                     button.classList.add('active');
                 }
             });
