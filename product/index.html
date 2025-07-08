@@ -221,7 +221,7 @@
                 <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('browser')">Enterprise Browser</button>
                 <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('extension')">Browser Extension</button>
                 <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('disposable-browser')">Disposable Browser</button>
-                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('network')">Disposable Network</button>
+                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('network')">Zero Trust Network</button>
                 <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('resources')">Additional Resources</button>
             </div>
 
@@ -495,7 +495,7 @@
                 </div>
             </div>
 
-            <!-- Disposable Network Content -->
+            <!-- Zero Trust Network Content -->
             <div id="network-content" class="tab-content">
                 <div class="bg-slate-700/50 rounded-lg p-8">
                     <div class="flex items-center mb-6">
@@ -704,7 +704,7 @@
                     (tabName === 'browser' && buttonText === 'Enterprise Browser') ||
                     (tabName === 'extension' && buttonText === 'Browser Extension') ||
                     (tabName === 'disposable-browser' && buttonText === 'Disposable Browser') ||
-                    (tabName === 'network' && buttonText === 'Disposable Network') ||
+                    (tabName === 'network' && buttonText === 'Zero Trust Network') ||
                     (tabName === 'resources' && buttonText === 'Additional Resources')) {
                     button.classList.add('active');
                 }
