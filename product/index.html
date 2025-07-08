@@ -120,21 +120,6 @@
 
                 <!-- Core Components Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all card-hover" onclick="showTab('workspace')">
-                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                    </svg>
-                </div>
-                <h2 class="text-xl font-bold mb-2">Enterprise Workspace</h2>
-                <p class="text-gray-400 text-sm mb-4">Secure, isolated enclave on user devices that separates corporate applications from personal environments.</p>
-                <ul class="text-sm text-gray-300 space-y-1">
-                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Data-in-Use Protection</li>
-                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Granular Security Controls</li>
-                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Self-Defending & Ephemeral</li>
-                </ul>
-            </div>
-            
             <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all card-hover" onclick="showTab('browser')">
                 <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,6 +132,21 @@
                     <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Complete Security Isolation</li>
                     <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Centralized Management</li>
                     <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Consistent User Experience</li>
+                </ul>
+            </div>
+            
+            <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all card-hover" onclick="showTab('workspace')">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Enterprise Workspace</h2>
+                <p class="text-gray-400 text-sm mb-4">Secure, isolated enclave on user devices that separates corporate applications from personal environments.</p>
+                <ul class="text-sm text-gray-300 space-y-1">
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Data-in-Use Protection</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Granular Security Controls</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Self-Defending & Ephemeral</li>
                 </ul>
             </div>
             
@@ -217,8 +217,8 @@
             
             <!-- Tab Navigation -->
             <div class="flex flex-wrap justify-center gap-2 mb-8 border-b border-slate-700">
-                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700 active" onclick="showTab('workspace')">Enterprise Workspace</button>
-                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('browser')">Enterprise Browser</button>
+                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700 active" onclick="showTab('browser')">Enterprise Browser</button>
+                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('workspace')">Enterprise Workspace</button>
                 <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('extension')">Browser Extension</button>
                 <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('disposable-browser')">Disposable Browser</button>
                 <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('network')">Zero Trust Network</button>
@@ -227,7 +227,7 @@
 
             <!-- Tab Contents -->
             <!-- Enterprise Workspace Content -->
-            <div id="workspace-content" class="tab-content active">
+            <div id="workspace-content" class="tab-content">
                 <div class="bg-slate-700/50 rounded-lg p-8">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
@@ -294,7 +294,7 @@
             </div>
 
             <!-- Enterprise Browser Content -->
-            <div id="browser-content" class="tab-content">
+            <div id="browser-content" class="tab-content active">
                 <div class="bg-slate-700/50 rounded-lg p-8">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
