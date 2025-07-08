@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Netzilo</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/netzilo_logo_blue.svg">
+    <link rel="icon" type="image/png" href="../assets/images/netzilo_logo_blue.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#020617',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            500: '#64748b',
+                            400: '#94a3b8',
+                            300: '#cbd5e1',
+                            200: '#e2e8f0',
+                            100: '#f1f5f9',
+                            50: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="hidden md:grid grid-cols-3 items-center h-16">
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </a>
+                </div>
+
+                <div class="flex items-center justify-center space-x-8">
+                    <a href="../" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Home</a>
+                    <a href="../product/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Product</a>
+                    <a href="../solutions/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Solutions</a>
+                    <a href="../pricing/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Pricing</a>
+                    <a href="../about/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">About</a>
+                </div>
+
+                <div class="flex items-center justify-end">
+                    <a href="https://go.netzilo.com/register" target="_blank" rel="noopener" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile layout -->
+            <div class="md:hidden flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-slate-900 rounded-lg mt-2">
+                    <a href="../" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Home</a>
+                    <a href="../product/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Product</a>
+                    <a href="../solutions/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Solutions</a>
+                    <a href="../pricing/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Pricing</a>
+                    <a href="../about/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex items-center text-sm">
+                <a href="../" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                <svg class="h-4 w-4 mx-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <a href="../legal/" class="text-gray-400 hover:text-white transition-colors">Legal</a>
+                <svg class="h-4 w-4 mx-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <span class="text-white">Terms of Service</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="min-h-screen bg-slate-950 py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Terms of Service</h1>
+                    <p class="text-gray-400">Effective Date: January 1, 2025</p>
+                </div>
+
+                <div class="prose prose-invert max-w-none">
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
+                        <p class="text-gray-300 mb-4">
+                            By accessing or using Netzilo's services, including our Enterprise Browser, Enterprise Workspace, 
+                            and related products (collectively, the "Services"), you agree to be bound by these Terms of Service 
+                            ("Terms"). If you do not agree to these Terms, you may not use our Services.
+                        </p>
+                        <p class="text-gray-300">
+                            These Terms constitute a legally binding agreement between you (whether an individual or entity) 
+                            and Netzilo, Inc. ("Netzilo", "we", "us", or "our").
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">2. Description of Services</h2>
+                        <p class="text-gray-300 mb-4">
+                            Netzilo provides a comprehensive Digital Enterprise Workspace solution that includes:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                            <li>Enterprise Browser with zero trust security</li>
+                            <li>Enterprise Workspace for secure application access</li>
+                            <li>Browser Extension for enhanced security controls</li>
+                            <li>Disposable Browser for isolated sessions</li>
+                            <li>Disposable Network for secure connectivity</li>
+                            <li>Related security and productivity features</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">3. Account Registration</h2>
+                        <p class="text-gray-300 mb-4">
+                            To access certain features of our Services, you must register for an account. When registering, you agree to:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                            <li>Provide accurate, current, and complete information</li>
+                            <li>Maintain and promptly update your account information</li>
+                            <li>Maintain the security of your account credentials</li>
+                            <li>Accept responsibility for all activities under your account</li>
+                            <li>Notify us immediately of any unauthorized use</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">4. Acceptable Use Policy</h2>
+                        <p class="text-gray-300 mb-4">
+                            You agree to use our Services only for lawful purposes and in accordance with these Terms. 
+                            You agree not to use our Services:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                            <li>In any way that violates any applicable law or regulation</li>
+                            <li>To transmit any harmful, offensive, or unlawful material</li>
+                            <li>To impersonate or attempt to impersonate another person</li>
+                            <li>To engage in any conduct that restricts or inhibits use of the Services</li>
+                            <li>To introduce viruses, malware, or other harmful code</li>
+                            <li>To attempt to gain unauthorized access to any systems</li>
+                            <li>For any commercial purposes without our express permission</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">5. Intellectual Property Rights</h2>
+                        <p class="text-gray-300 mb-4">
+                            The Services and their entire contents, features, and functionality are owned by Netzilo, 
+                            its licensors, or other providers of such material and are protected by copyright, trademark, 
+                            patent, trade secret, and other intellectual property laws.
+                        </p>
+                        <p class="text-gray-300">
+                            You are granted a limited, non-exclusive, non-transferable license to access and use the 
+                            Services for your internal business purposes in accordance with these Terms.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">6. Privacy and Data Protection</h2>
+                        <p class="text-gray-300 mb-4">
+                            Your use of our Services is also governed by our Privacy Policy, which is incorporated by 
+                            reference into these Terms. By using our Services, you consent to our collection, use, and 
+                            disclosure of information as described in our Privacy Policy.
+                        </p>
+                        <p class="text-gray-300">
+                            We implement industry-standard security measures to protect your data and maintain compliance 
+                            with applicable data protection regulations.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">7. Payment Terms</h2>
+                        <p class="text-gray-300 mb-4">
+                            If you subscribe to paid Services:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                            <li>You agree to pay all fees according to your selected plan</li>
+                            <li>Fees are non-refundable except as required by law</li>
+                            <li>We may change fees upon 30 days' notice</li>
+                            <li>You are responsible for all applicable taxes</li>
+                            <li>Failure to pay may result in suspension or termination</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">8. Service Level Agreement</h2>
+                        <p class="text-gray-300 mb-4">
+                            For paid enterprise plans, we provide a 99.9% uptime SLA. Details of our service level 
+                            commitments, including remedies for downtime, are available in our separate Service Level 
+                            Agreement document.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">9. Disclaimer of Warranties</h2>
+                        <p class="text-gray-300 mb-4">
+                            THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, 
+                            EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, NETZILO DISCLAIMS 
+                            ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+                            PURPOSE, AND NON-INFRINGEMENT.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">10. Limitation of Liability</h2>
+                        <p class="text-gray-300 mb-4">
+                            TO THE MAXIMUM EXTENT PERMITTED BY LAW, NETZILO SHALL NOT BE LIABLE FOR ANY INDIRECT, 
+                            INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR 
+                            REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, 
+                            OR OTHER INTANGIBLE LOSSES.
+                        </p>
+                        <p class="text-gray-300">
+                            IN NO EVENT SHALL NETZILO'S AGGREGATE LIABILITY EXCEED THE AMOUNT PAID BY YOU TO NETZILO 
+                            FOR THE SERVICES IN THE TWELVE MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">11. Indemnification</h2>
+                        <p class="text-gray-300">
+                            You agree to indemnify, defend, and hold harmless Netzilo and its officers, directors, 
+                            employees, and agents from any claims, liabilities, damages, losses, and expenses arising 
+                            from your use of the Services or violation of these Terms.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">12. Termination</h2>
+                        <p class="text-gray-300 mb-4">
+                            We may terminate or suspend your access to our Services immediately, without prior notice 
+                            or liability, for any reason, including breach of these Terms. Upon termination:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                            <li>Your right to use the Services will cease immediately</li>
+                            <li>We may delete your account and data</li>
+                            <li>Provisions that should survive will remain in effect</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">13. Governing Law</h2>
+                        <p class="text-gray-300">
+                            These Terms shall be governed by and construed in accordance with the laws of the State 
+                            of California, without regard to its conflict of law provisions. Any disputes shall be 
+                            resolved in the courts of San Francisco County, California.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">14. Changes to Terms</h2>
+                        <p class="text-gray-300">
+                            We reserve the right to modify these Terms at any time. We will provide notice of material 
+                            changes by posting the new Terms and updating the effective date. Your continued use of the 
+                            Services after changes constitutes acceptance of the modified Terms.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">15. Contact Information</h2>
+                        <p class="text-gray-300 mb-4">
+                            If you have any questions about these Terms, please contact us at:
+                        </p>
+                        <div class="text-gray-300">
+                            <p class="font-semibold">Netzilo, Inc.</p>
+                            <p>Email: legal@netzilo.com</p>
+                            <p>Address: 123 Security Street, San Francisco, CA 94105</p>
+                            <p>Phone: +1 (415) 985-2636</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Netzilo provides a modernized alternative to legacy VDI and RBI technologies, 
+                        offering a complete Digital Enterprise Workspace solution with zero trust security.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/netzilo/" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../product/" class="text-gray-400 hover:text-white transition-colors">Product</a></li>
+                        <li><a href="../solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a></li>
+                        <li><a href="../pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="../about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="../legal/" class="text-gray-400 hover:text-white transition-colors">Legal</a></li>
+                        <li><a href="../contact/" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>sales@netzilo.com</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>+1 (415) 985-2636</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>San Francisco, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Netzilo. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="../legal/privacy-policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="../legal/terms-of-service.html" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+</html> 
