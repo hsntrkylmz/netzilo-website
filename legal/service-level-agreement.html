@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Level Agreement (SLA) - Netzilo</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/netzilo_logo_blue.svg">
+    <link rel="icon" type="image/png" href="../assets/images/netzilo_logo_blue.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#020617',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            500: '#64748b',
+                            400: '#94a3b8',
+                            300: '#cbd5e1',
+                            200: '#e2e8f0',
+                            100: '#f1f5f9',
+                            50: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="hidden md:grid grid-cols-3 items-center h-16">
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </a>
+                </div>
+
+                <div class="flex items-center justify-center space-x-8">
+                    <a href="../" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Home</a>
+                    <a href="../product/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Product</a>
+                    <a href="../solutions/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Solutions</a>
+                    <a href="../pricing/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Pricing</a>
+                    <a href="../about/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">About</a>
+                </div>
+
+                <div class="flex items-center justify-end">
+                    <a href="https://go.netzilo.com/register" target="_blank" rel="noopener" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile layout -->
+            <div class="md:hidden flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-slate-900 rounded-lg mt-2">
+                    <a href="../" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Home</a>
+                    <a href="../product/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Product</a>
+                    <a href="../solutions/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Solutions</a>
+                    <a href="../pricing/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Pricing</a>
+                    <a href="../about/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex items-center text-sm">
+                <a href="../" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                <svg class="h-4 w-4 mx-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <a href="../legal/" class="text-gray-400 hover:text-white transition-colors">Legal</a>
+                <svg class="h-4 w-4 mx-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <span class="text-white">Service Level Agreement (SLA)</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="min-h-screen bg-slate-950 py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Service Level Agreement (SLA)</h1>
+                    <p class="text-gray-400">Netzilo Service Level Agreement</p>
+                </div>
+
+                <div class="prose prose-invert max-w-none">
+                    <!-- Overview -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Overview</h2>
+                        <p class="text-gray-300 mb-4">
+                            This Service Level Agreement ("SLA") is included for all customers that purchase a Silver or Gold support package pursuant to an Order Form with Netzilo. Any capitalized terms that are not defined in this SLA have the meanings assigned to such terms in the Main Service Agreement between you and Netzilo.
+                        </p>
+                        <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+                            <p class="text-blue-200">
+                                <strong>Note:</strong> This SLA applies to Silver and Gold support packages. For questions about your specific support level, please contact our support team.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service Obligations -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">1. Service Obligations</h2>
+                        <p class="text-gray-300">
+                            Netzilo will use commercially reasonable efforts to make the Netzilo Solution available in accordance with the standards set forth below in Section 2 (Service Availability), Section 3 (Support Standards) and Section 5 (Exclusions). If we fall short of the standards described in this SLA and your use of the Netzilo Solution is impacted, we will provide Service Credits as set forth below in Section 4 (Service Credits). This Service Credit will be Customer's sole and exclusive remedy for any failure to meet the targets set forth in this SLA.
+                        </p>
+                    </div>
+
+                    <!-- Service Availability -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">2. Service Availability</h2>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white mb-3">2.1 Uptime</h3>
+                                <p class="text-gray-300 mb-4">
+                                    For purposes of this SLA, "Uptime" is the percentage of total possible minutes that core systems of the Netzilo Solution – namely, the <Netzilo.com> website and Documentation, admin console, API, management and STUN/TURN servers, and package server– are operational and available each calendar month. Netzilo will make commercially reasonable efforts to maintain at least 99.9% Uptime.
+                                </p>
+                                <div class="bg-green-900/20 border border-green-500/30 rounded-lg p-4">
+                                    <p class="text-green-200 font-mono text-sm">
+                                        (Total minutes in a month – Downtime minutes) / total minutes in a month > 99.9%
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg font-semibold text-white mb-3">2.2 Downtime</h3>
+                                <p class="text-gray-300 mb-4">
+                                    For purposes of this SLA and our Uptime commitment, "Downtime" is the number of minutes the Netzilo Solution is not operational or available. Downtime may encompass periods of time when the entire Netzilo Solution is not operational or completely unavailable (a "Full Outage") and periods of time when only certain systems, features or functionality are not operational or unavailable (a "Partial Outage"). Downtime excludes routine maintenance (see 2.2.1) and emergency maintenance (see 2.2.2).
+                                </p>
+
+                                <div class="space-y-4">
+                                    <div class="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-4">
+                                        <h4 class="text-lg font-semibold text-yellow-300 mb-2">2.2.1 Routine Maintenance</h4>
+                                        <p class="text-yellow-200 text-sm">
+                                            Sometimes we need to perform routine maintenance to keep the Netzilo Solution working smoothly. For any maintenance that might cause a material disruption to a customer's network, we will strive to provide notice at least forty-eight (48) hours in advance. Whenever possible, routine maintenance will take place so as to minimize potential business disruption. Please note, however, that, due to our global customer base, we cannot guarantee that routine maintenance will always take place during a particular window of time or that there will be no disruption in service.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-orange-900/20 border border-orange-500/30 rounded-lg p-4">
+                                        <h4 class="text-lg font-semibold text-orange-300 mb-2">2.2.2 Emergency Maintenance</h4>
+                                        <p class="text-orange-200 text-sm">
+                                            Sometimes we need to do emergency maintenance on the Netzilo Solution, such as for example a security patch or high priority fixes identified as a result of an outage. We will strive to provide notice of emergency maintenance at least twenty-four (24) hours in advance, but reserve the right to perform emergency maintenance with no notice, as determined by us in our sole discretion.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+                                <p class="text-blue-200 text-sm">
+                                    <strong>Business Hours:</strong> For purposes of this SLA, "business hours" are 9 AM ET – 6 PM ET, Monday through Friday.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Support Packages Table -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">3. Support Packages</h2>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full border-collapse">
+                                <thead>
+                                    <tr class="border-b border-slate-600">
+                                        <th class="text-left p-4 bg-slate-700 text-white font-semibold">Feature</th>
+                                        <th class="text-left p-4 bg-slate-700 text-white font-semibold">Silver</th>
+                                        <th class="text-left p-4 bg-slate-700 text-white font-semibold">Gold</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-600">
+                                        <td class="p-4 text-gray-300 font-medium">Eligible Plans</td>
+                                        <td class="p-4 text-gray-300">– Enterprise<br>– Premium<br>– Legacy Business</td>
+                                        <td class="p-4 text-gray-300">Enterprise</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-600">
+                                        <td class="p-4 text-gray-300 font-medium">Support Hours</td>
+                                        <td class="p-4 text-gray-300">Business hours</td>
+                                        <td class="p-4 text-gray-300">Business hours<br>Plus 24×7 support for Sev 1 and Sev 2 incidents*</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-600">
+                                        <td class="p-4 text-gray-300 font-medium">First Response SLA</td>
+                                        <td class="p-4 text-gray-300">See Table 2</td>
+                                        <td class="p-4 text-gray-300">See Table 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 text-gray-300 font-medium">Other Perks</td>
+                                        <td class="p-4 text-gray-300">Priority bug fixes</td>
+                                        <td class="p-4 text-gray-300">– Priority bug fixes<br>– Priority feature requests</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-4 mt-4">
+                            <p class="text-yellow-200 text-sm">
+                                <strong>*24×7 Support Note:</strong> To receive 24×7 support for Severity 1 and Severity 2 incidents, you must first identify no more than three (3) authorized Customer contacts, and the request must come from one of those contacts. If you contact us from an account or email address that is not one of your authorized support contacts, we may not be able to verify and identify your associated account and will only be able to share generalized information. We also recommend that your contacts login to your account and use our Contact Support form in order to be identified and routed correctly when submitting support tickets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Severity Levels Table -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Severity Levels and First Response Times</h2>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full border-collapse">
+                                <thead>
+                                    <tr class="border-b border-slate-600">
+                                        <th class="text-left p-4 bg-slate-700 text-white font-semibold">Severity Level</th>
+                                        <th class="text-left p-4 bg-slate-700 text-white font-semibold">Description</th>
+                                        <th class="text-left p-4 bg-slate-700 text-white font-semibold">Silver First Response</th>
+                                        <th class="text-left p-4 bg-slate-700 text-white font-semibold">Gold First Response</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-600">
+                                        <td class="p-4">
+                                            <span class="bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold">Sev 1</span>
+                                            <div class="text-red-300 text-sm mt-1">Critical</div>
+                                        </td>
+                                        <td class="p-4 text-gray-300">
+                                            There is a Full Outage, a Personal Data Breach (defined in our DPA), or other major security breach.<br><br>
+                                            <strong>Ex:</strong> Netzilo is not operational for your entire company.<br>
+                                            <strong>Ex:</strong> A breach of our production database.
+                                        </td>
+                                        <td class="p-4 text-gray-300">4 business hours</td>
+                                        <td class="p-4 text-gray-300">2 hours</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-600">
+                                        <td class="p-4">
+                                            <span class="bg-orange-600 text-white px-2 py-1 rounded text-xs font-semibold">Sev 2</span>
+                                            <div class="text-orange-300 text-sm mt-1">High</div>
+                                        </td>
+                                        <td class="p-4 text-gray-300">
+                                            There is a Partial Outage of a core service, feature or functionality, or an attempted security breach.<br><br>
+                                            <strong>Ex:</strong> SCIM is not operational.
+                                        </td>
+                                        <td class="p-4 text-gray-300">1 business day</td>
+                                        <td class="p-4 text-gray-300">4 hours</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-600">
+                                        <td class="p-4">
+                                            <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs font-semibold">Sev 3</span>
+                                            <div class="text-yellow-300 text-sm mt-1">Normal</div>
+                                        </td>
+                                        <td class="p-4 text-gray-300">
+                                            There is a Partial Outage of a non-core or non-essential service, feature or functionality.<br><br>
+                                            <strong>Ex:</strong> A user or subset of users are experiencing poor latency or disconnects when using Netzilo.
+                                        </td>
+                                        <td class="p-4 text-gray-300">2 business days</td>
+                                        <td class="p-4 text-gray-300">1 business day</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4">
+                                            <span class="bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">Sev 4</span>
+                                            <div class="text-green-300 text-sm mt-1">Low</div>
+                                        </td>
+                                        <td class="p-4 text-gray-300">
+                                            A non-material support item, and there is no Outage (Full or Partial).<br><br>
+                                            <strong>Ex:</strong> configuration help requests; minor UX bugs.
+                                        </td>
+                                        <td class="p-4 text-gray-300">2 business days</td>
+                                        <td class="p-4 text-gray-300">1 business day</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Service Credits -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">4. Service Credits</h2>
+                        <p class="text-gray-300 mb-6">
+                            If we fall short of our Uptime commitment (Section 2.1) during a particular calendar month you may be eligible for a "Service Credit" for that month.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white mb-3">4.1 Downtime Service Credits</h3>
+                                <p class="text-gray-300 mb-4">
+                                    Downtime Service Credits are based on the relevant portion of the Fees in such month, calculated as follows:
+                                </p>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full border-collapse">
+                                        <thead>
+                                            <tr class="border-b border-slate-600">
+                                                <th class="text-left p-4 bg-slate-700 text-white font-semibold">Uptime (in a given month)</th>
+                                                <th class="text-left p-4 bg-slate-700 text-white font-semibold">Service Credit (% of monthly fees)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b border-slate-600">
+                                                <td class="p-4 text-gray-300">99.9% or greater</td>
+                                                <td class="p-4 text-gray-300">No Service Credit</td>
+                                            </tr>
+                                            <tr class="border-b border-slate-600">
+                                                <td class="p-4 text-gray-300">90.00% – 99.89%</td>
+                                                <td class="p-4 text-gray-300">5%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-4 text-gray-300">Under 90.00%</td>
+                                                <td class="p-4 text-gray-300">10%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="text-gray-300 mt-4">
+                                    Note that Downtime does not affect everyone at the same time or in the same way. For example, some customers may be eligible to receive Service Credits during an outage in their region, while other customers in other regions that have not been similarly affected will not.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg font-semibold text-white mb-3">4.2 Requesting Service Credits</h3>
+                                <p class="text-gray-300">
+                                    Customers must request Service Credits within thirty (30) days after the end of the impacted month by contacting Support. Netzilo will review all requests for Service Credits and, if Customer is eligible, will apply the Service Credits to Customer's next invoice.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg font-semibold text-white mb-3">4.3 Limitations</h3>
+                                <p class="text-gray-300">
+                                    For Service Credits to apply, all outstanding undisputed invoices must be fully paid up. Service Credits are not transferable or refundable, and have no currency or exchange value. Service Credits are capped at a maximum of the applicable monthly Fees. Upon expiration or termination of the applicable Order Form or MSA, any unused Service Credits that have accrued to your account will expire.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exclusions -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">5. Exclusions</h2>
+                        <p class="text-gray-300 mb-4">
+                            This SLA only applies to the current version of production instances of the Netzilo Solution. This SLA does not apply to any of the following:
+                        </p>
+                        <ul class="list-disc list-inside space-y-3 text-gray-300 ml-4">
+                            <li>Versions of the Netzilo Solution that have been retired as being "end of maintenance" (EOM) or "end of life" (EOL) as determined by Netzilo in our sole discretion (provided Netzilo has notified customers that such versions have been designated EOM or EOL);</li>
+                            <li>Integrations or other Third Party Services;</li>
+                            <li>Any pre-release, staging environment, sandbox environment, or Research experiences;</li>
+                            <li>Unsupported ancillary applications or services;</li>
+                            <li>Devices behind subnet routers;</li>
+                            <li>External network or equipment problems outside of our reasonable control, such as issues with bad routing tables between your Internet service provider (ISP) and our server, Internet service failures or delays, or the unavailability or modification by third parties of telecommunications or hosting infrastructure;</li>
+                            <li>Any suspension of Permitted User accounts due to unauthorized access or use in violation of the Agreement;</li>
+                            <li>Self-hosted management servers and relay servers;</li>
+                            <li>Netzilo Client Software that is used on or in conjunction with hardware or software other than that specified in applicable Documentation;</li>
+                            <li>Using the Netzilo Solution not in accordance with the Agreement or Documentation;</li>
+                            <li>Alterations or modifications to the Netzilo Client Software;</li>
+                            <li>Defects in the Netzilo Client Software due to device hardware malfunction, abuse or improper use; or</li>
+                            <li>Any events beyond our reasonable control, including strikes or other labor problems, material shortages, epidemics, pandemics, civil unrest, riots, insurrection, fires, flood, earthquakes, storms, explosions, cyber attacks, or acts of God, war, terror or government.</li>
+                        </ul>
+                        <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4 mt-6">
+                            <p class="text-blue-200 text-sm">
+                                <strong>Customer Cooperation:</strong> Finally, our ability to perform under this SLA may be contingent upon Customer's reasonable cooperation. If Netzilo is denied or delayed access or information by Customer, as reasonably requested by Netzilo in connection with resolving reported issues, then Netzilo will be excused, without liability, from performing under this SLA with respect to that issue until such access or information is provided. In such a case, Customer will not be entitled to any Service Credits, nor will Customer be excused from its payment obligations to Netzilo under the MSA.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Contact Information</h2>
+                        <p class="text-gray-300 mb-4">
+                            For questions about this Service Level Agreement or to request Service Credits, please contact us:
+                        </p>
+                        <div class="text-gray-300">
+                            <p class="font-semibold">Netzilo, Inc.</p>
+                            <p>Email: <a href="mailto:legal@netzilo.com" class="text-blue-400 hover:text-blue-300 underline">legal@netzilo.com</a></p>
+                            <p>Support: <a href="mailto:support@netzilo.com" class="text-blue-400 hover:text-blue-300 underline">support@netzilo.com</a></p>
+                            <p>Address: 166 Geary Str STE 1500, San Francisco, CA, 94108</p>
+                            <p>Phone: +1 (415) 985-2636</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Netzilo extends enterprise edge capabilities to endpoint environments through a comprehensive Digital Enterprise Workplace solution.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/netzilo/" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../product/" class="text-gray-400 hover:text-white transition-colors">Product</a></li>
+                        <li><a href="../solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a></li>
+                        <li><a href="../pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="../about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="../legal/" class="text-gray-400 hover:text-white transition-colors">Legal</a></li>
+                        <li><a href="../contact/" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>sales@netzilo.com</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>+1 (415) 985-2636</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>San Francisco, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Netzilo. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="../privacy-policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="../terms-of-service.html" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+</html> 
