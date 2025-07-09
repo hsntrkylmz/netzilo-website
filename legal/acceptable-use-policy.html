@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceptable Use Policy - Netzilo</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/netzilo_logo_blue.svg">
+    <link rel="icon" type="image/png" href="../assets/images/netzilo_logo_blue.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#020617',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            500: '#64748b',
+                            400: '#94a3b8',
+                            300: '#cbd5e1',
+                            200: '#e2e8f0',
+                            100: '#f1f5f9',
+                            50: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="hidden md:grid grid-cols-3 items-center h-16">
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </a>
+                </div>
+
+                <div class="flex items-center justify-center space-x-8">
+                    <a href="../" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Home</a>
+                    <a href="../product/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Product</a>
+                    <a href="../solutions/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Solutions</a>
+                    <a href="../pricing/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Pricing</a>
+                    <a href="../about/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">About</a>
+                </div>
+
+                <div class="flex items-center justify-end">
+                    <a href="https://go.netzilo.com/register" target="_blank" rel="noopener" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile layout -->
+            <div class="md:hidden flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-slate-900 rounded-lg mt-2">
+                    <a href="../" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Home</a>
+                    <a href="../product/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Product</a>
+                    <a href="../solutions/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Solutions</a>
+                    <a href="../pricing/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Pricing</a>
+                    <a href="../about/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex items-center text-sm">
+                <a href="../" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                <svg class="h-4 w-4 mx-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <a href="../legal/" class="text-gray-400 hover:text-white transition-colors">Legal</a>
+                <svg class="h-4 w-4 mx-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <span class="text-white">Acceptable Use Policy</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="min-h-screen bg-slate-950 py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Acceptable Use Policy</h1>
+                    <p class="text-gray-400">Effective Date: January 1, 2025</p>
+                </div>
+
+                <div class="prose prose-invert max-w-none">
+                    <!-- Overview -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Overview</h2>
+                        <p class="text-gray-300 mb-4">
+                            This Acceptable Use Policy ("AUP") is part of the Documentation applicable to all who use or access the Netzilo Solution. Any capitalized terms that are not defined in this AUP have the meaning ascribed to such terms elsewhere in the Terms of Service or Main Services Agreement (as applicable to you).
+                        </p>
+                        <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+                            <p class="text-blue-200">
+                                <strong>Report Abuse:</strong> If you suspect abuse of this AUP or the Netzilo Solution, please contact our legal team at <a href="mailto:legal@netzilo.com" class="text-blue-400 hover:text-blue-300 underline">legal@netzilo.com</a>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Prohibitions -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Prohibitions</h2>
+                        <p class="text-gray-300 mb-6">
+                            Customers are solely responsible for their Customer Data, and are prohibited from using the Netzilo Solution in an unlawful manner. Customers are also prohibited from using the Netzilo Solution for any malicious activities that diminish, disrupt, disturb, or threaten the security or stability of the Netzilo Solution, our websites, or the systems and operations of our customers.
+                        </p>
+                        
+                        <p class="text-gray-300 mb-4 font-semibold">This includes without limitation the following:</p>
+                        
+                        <div class="grid gap-4">
+                            <!-- Content Violations -->
+                            <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-4">
+                                <h3 class="text-lg font-semibold text-red-300 mb-3">Content Violations</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                                    <li>Discriminatory or hate speech of any kind towards any individual or group</li>
+                                    <li>Any sexual abuse or exploitation material</li>
+                                    <li>Doxxing or any coordinated harassment towards any individual or group</li>
+                                    <li>Incitement, promotion, or celebration of violence</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Identity and Privacy Violations -->
+                            <div class="bg-orange-900/20 border border-orange-500/30 rounded-lg p-4">
+                                <h3 class="text-lg font-semibold text-orange-300 mb-3">Identity and Privacy Violations</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                                    <li>Any impersonation of an individual or entity</li>
+                                    <li>Misrepresenting your identity as a person or entity through false association</li>
+                                    <li>Posting personally identifiable information without owner consent</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Security Threats -->
+                            <div class="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-4">
+                                <h3 class="text-lg font-semibold text-yellow-300 mb-3">Security Threats</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                                    <li>Phishing or any activity that involves attempts at acquiring information for the purpose of stealing sensitive information</li>
+                                    <li>Spam or other such automated activities that involve excessive, bulk activity</li>
+                                    <li>Distributing or promoting malware or other computer code that is designed to cause a security breach</li>
+                                    <li>Distributing or promoting spyware or other computer code that is designed to enable you or others to gather information about or monitor the online or other activities of another party or otherwise gain unauthorized access to another's device(s)</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- System Abuse -->
+                            <div class="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
+                                <h3 class="text-lg font-semibold text-purple-300 mb-3">System Abuse</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                                    <li>Any use in an attempt to gain unauthorized access to a user or server, database, accounts, network, or other services not intended to be public</li>
+                                    <li>Interfering with, disrupting, or creating an undue burden on the Netzilo Solution or the networks, servers, systems or services connected to the Netzilo Solution</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Illegal Activities -->
+                            <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-4">
+                                <h3 class="text-lg font-semibold text-red-300 mb-3">Illegal Activities</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                                    <li>Fraudulent business activities</li>
+                                    <li>Terrorist or criminal activities</li>
+                                    <li>Any other illegal or illicit activities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No Obligation to Monitor -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">No Obligation to Monitor</h2>
+                        <p class="text-gray-300 mb-4">
+                            We do not have any general obligation to monitor your use of the Netzilo Solution. We do not have, and do not undertake, any obligation to prescreen, monitor, edit, or remove any Customer Data, or to actively seek facts or circumstances indicating illegal activity.
+                        </p>
+                    </div>
+
+                    <!-- Policy Enforcement -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Policy Enforcement</h2>
+                        <p class="text-gray-300 mb-4">
+                            In accordance with applicable law, we reserve the right (but undertake no obligation) to, in our sole discretion and without notice or liability to you, suspend or terminate access to and use of the Netzilo Solution by any person for violation of this AUP as determined by us in our sole discretion.
+                        </p>
+                        <p class="text-gray-300">
+                            You will provide reasonable cooperation in any investigation or action regarding suspected or alleged violations.
+                        </p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Contact Information</h2>
+                        <p class="text-gray-300 mb-4">
+                            If you have any questions about this Acceptable Use Policy or need to report violations, please contact us:
+                        </p>
+                        <div class="text-gray-300">
+                            <p class="font-semibold">Netzilo, Inc.</p>
+                            <p>Email: <a href="mailto:legal@netzilo.com" class="text-blue-400 hover:text-blue-300 underline">legal@netzilo.com</a></p>
+                            <p>Address: 166 Geary Str STE 1500, San Francisco, CA, 94108</p>
+                            <p>Phone: +1 (415) 985-2636</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Netzilo provides a modernized alternative to legacy VDI and RBI technologies, 
+                        offering a complete Digital Enterprise Workspace solution with zero trust security.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/netzilo/" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../product/" class="text-gray-400 hover:text-white transition-colors">Product</a></li>
+                        <li><a href="../solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a></li>
+                        <li><a href="../pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="../about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="../legal/" class="text-gray-400 hover:text-white transition-colors">Legal</a></li>
+                        <li><a href="../contact/" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>sales@netzilo.com</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>+1 (415) 985-2636</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>San Francisco, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Netzilo. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="../privacy-policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="../terms-of-service.html" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+</html> 
