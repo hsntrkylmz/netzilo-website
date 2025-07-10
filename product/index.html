@@ -44,6 +44,31 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        /* Mobile tab navigation styles */
+        .tab-navigation {
+            scrollbar-width: thin;
+            scrollbar-color: #3b82f6 #1e293b;
+        }
+        .tab-navigation::-webkit-scrollbar {
+            height: 6px;
+        }
+        .tab-navigation::-webkit-scrollbar-track {
+            background: #1e293b;
+            border-radius: 3px;
+        }
+        .tab-navigation::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 3px;
+        }
+        .tab-navigation::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+        @media (max-width: 768px) {
+            .tab-button {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-white">
@@ -211,82 +236,84 @@
 
                 <!-- Enterprise Product Details Section -->
                 <div class="mt-20">
-            <div class="bg-slate-800 border border-slate-700 rounded-lg p-8">
-                <h2 class="text-3xl font-bold mb-8 text-center text-white">Enterprise Product Details</h2>
+            <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 sm:p-6 lg:p-8">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-white">Enterprise Product Details</h2>
             
             <!-- Tab Navigation -->
-            <div class="flex flex-wrap justify-center gap-2 mb-8 border-b border-slate-700">
-                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700 active" onclick="showTab('browser')">Enterprise Browser</button>
-                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('workspace')">Enterprise Workspace</button>
-                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('extension')">Browser Extension</button>
-                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('disposable-browser')">Disposable Browser</button>
-                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('network')">Zero Trust Network</button>
-                <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('resources')">Additional Resources</button>
+            <div class="mb-6 sm:mb-8 border-b border-slate-700">
+                <div class="tab-navigation flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:justify-center md:overflow-x-visible">
+                    <button class="tab-button px-3 py-2 sm:px-4 text-xs sm:text-sm font-medium rounded-t-lg hover:bg-slate-700 active" onclick="showTab('browser')">Enterprise Browser</button>
+                    <button class="tab-button px-3 py-2 sm:px-4 text-xs sm:text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('workspace')">Enterprise Workspace</button>
+                    <button class="tab-button px-3 py-2 sm:px-4 text-xs sm:text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('extension')">Browser Extension</button>
+                    <button class="tab-button px-3 py-2 sm:px-4 text-xs sm:text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('disposable-browser')">Disposable Browser</button>
+                    <button class="tab-button px-3 py-2 sm:px-4 text-xs sm:text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('network')">Zero Trust Network</button>
+                    <button class="tab-button px-3 py-2 sm:px-4 text-xs sm:text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('resources')">Additional Resources</button>
+                </div>
             </div>
 
             <!-- Tab Contents -->
             <!-- Enterprise Workspace Content -->
             <div id="workspace-content" class="tab-content">
-                <div class="bg-slate-700/50 rounded-lg p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-slate-700/50 rounded-lg p-4 sm:p-6 lg:p-8">
+                    <div class="flex flex-col sm:flex-row items-center mb-4 sm:mb-6 text-center sm:text-left">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-3 sm:mb-0 sm:mr-4">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold">Enterprise Workspace</h3>
+                        <h3 class="text-2xl sm:text-3xl font-bold">Enterprise Workspace</h3>
                     </div>
                     
-                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Isolated Endpoint Enclave</h4>
-                    <p class="text-gray-300 mb-8">The Enterprise Workspace creates a secure, isolated enclave on the user's device that encloses corporate applications (email, CRM, collaboration) separate from the personal environment. This disposable, self-defending workspace runs locally but remains isolated from the host OS, creating a safe haven for sensitive activity.</p>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-3 sm:mb-4">Isolated Endpoint Enclave</h4>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8">The Enterprise Workspace creates a secure, isolated enclave on the user's device that encloses corporate applications (email, CRM, collaboration) separate from the personal environment. This disposable, self-defending workspace runs locally but remains isolated from the host OS, creating a safe haven for sensitive activity.</p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-slate-800 rounded-lg p-6">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+                        <div class="bg-slate-800 rounded-lg p-4 sm:p-6">
+                            <div class="flex items-center mb-3 sm:mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
                                     <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                                     </svg>
                                 </div>
-                                <h5 class="text-xl font-semibold">Data-in-Use Protection</h5>
+                                <h5 class="text-lg sm:text-xl font-semibold">Data-in-Use Protection</h5>
                             </div>
-                            <p class="text-gray-400">Corporate apps execute inside the enclave, where data is inaccessible to the host machine. Even if malware infects the personal side, it cannot reach into the workspace. Sensitive files never touch the unsecured host disk.</p>
+                            <p class="text-sm sm:text-base text-gray-400">Corporate apps execute inside the enclave, where data is inaccessible to the host machine. Even if malware infects the personal side, it cannot reach into the workspace. Sensitive files never touch the unsecured host disk.</p>
                         </div>
                         
-                        <div class="bg-slate-800 rounded-lg p-6">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                        <div class="bg-slate-800 rounded-lg p-4 sm:p-6">
+                            <div class="flex items-center mb-3 sm:mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
                                     <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                 </div>
-                                <h5 class="text-xl font-semibold">Granular Security Controls</h5>
+                                <h5 class="text-lg sm:text-xl font-semibold">Granular Security Controls</h5>
                             </div>
-                            <p class="text-gray-400">Fine-grained policy controls for copy-paste, printing and screen capture can be selectively blocked. Optional watermarks can overlay the workspace apps to discourage photography and trace leaks.</p>
+                            <p class="text-sm sm:text-base text-gray-400">Fine-grained policy controls for copy-paste, printing and screen capture can be selectively blocked. Optional watermarks can overlay the workspace apps to discourage photography and trace leaks.</p>
                         </div>
                         
-                        <div class="bg-slate-800 rounded-lg p-6">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                        <div class="bg-slate-800 rounded-lg p-4 sm:p-6">
+                            <div class="flex items-center mb-3 sm:mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
                                     <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                                     </svg>
                                 </div>
-                                <h5 class="text-xl font-semibold">Unmanaged Device Control</h5>
+                                <h5 class="text-lg sm:text-xl font-semibold">Unmanaged Device Control</h5>
                             </div>
-                            <p class="text-gray-400">Enable secure access from BYOD and unmanaged devices without deploying MDM/UDM solutions. Netzilo's workspace provides enterprise-grade control by containing corporate data within the isolated enclave. IT maintains full visibility and policy enforcement while users keep their device autonomy.</p>
+                            <p class="text-sm sm:text-base text-gray-400">Enable secure access from BYOD and unmanaged devices without deploying MDM/UDM solutions. Netzilo's workspace provides enterprise-grade control by containing corporate data within the isolated enclave. IT maintains full visibility and policy enforcement while users keep their device autonomy.</p>
                         </div>
                         
-                        <div class="bg-slate-800 rounded-lg p-6">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                        <div class="bg-slate-800 rounded-lg p-4 sm:p-6">
+                            <div class="flex items-center mb-3 sm:mb-4">
+                                <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
                                     <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                                     </svg>
                                 </div>
-                                <h5 class="text-xl font-semibold">Zero Trust Architecture</h5>
+                                <h5 class="text-lg sm:text-xl font-semibold">Zero Trust Architecture</h5>
                             </div>
-                            <p class="text-gray-400">The design assumes zero trust in the endpoint: even keyloggers are rendered ineffective by isolating input streams. When the workspace is closed it self-destructs – wiping any encrypted documents or cached data so nothing persists on the device.</p>
+                            <p class="text-sm sm:text-base text-gray-400">The design assumes zero trust in the endpoint: even keyloggers are rendered ineffective by isolating input streams. When the workspace is closed it self-destructs – wiping any encrypted documents or cached data so nothing persists on the device.</p>
                         </div>
                     </div>
                 </div>
@@ -294,20 +321,20 @@
 
             <!-- Enterprise Browser Content -->
             <div id="browser-content" class="tab-content active">
-                <div class="bg-slate-700/50 rounded-lg p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-slate-700/50 rounded-lg p-4 sm:p-6 lg:p-8">
+                    <div class="flex flex-col sm:flex-row items-center mb-4 sm:mb-6 text-center sm:text-left">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-3 sm:mb-0 sm:mr-4">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold">Enterprise Browser</h3>
+                        <h3 class="text-2xl sm:text-3xl font-bold">Enterprise Browser</h3>
                     </div>
                     
-                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Zero Trust Browser with Built-in DLP</h4>
-                    <p class="text-gray-300 mb-8">The Enterprise Browser delivers a comprehensive zero trust browsing solution with embedded ZTNA, requiring no additional agents or installations. This unified platform provides last-mile data protection across all devices - from mobile to desktop - while enforcing sensitive data reduction policies directly within the browser, ensuring corporate data never leaves the secure environment.</p>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-3 sm:mb-4">Zero Trust Browser with Built-in DLP</h4>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8">The Enterprise Browser delivers a comprehensive zero trust browsing solution with embedded ZTNA, requiring no additional agents or installations. This unified platform provides last-mile data protection across all devices - from mobile to desktop - while enforcing sensitive data reduction policies directly within the browser, ensuring corporate data never leaves the secure environment.</p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                         <div class="bg-slate-800 rounded-lg p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
@@ -362,20 +389,20 @@
 
             <!-- Browser Extension Content -->
             <div id="extension-content" class="tab-content">
-                <div class="bg-slate-700/50 rounded-lg p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-slate-700/50 rounded-lg p-4 sm:p-6 lg:p-8">
+                    <div class="flex flex-col sm:flex-row items-center mb-4 sm:mb-6 text-center sm:text-left">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-3 sm:mb-0 sm:mr-4">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold">Enterprise Browser Extension</h3>
+                        <h3 class="text-2xl sm:text-3xl font-bold">Enterprise Browser Extension</h3>
                     </div>
                     
-                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Transform Any Browser into a Secure Enterprise Browser</h4>
-                    <p class="text-gray-300 mb-8">The Enterprise Browser Extension turns users' existing browsers (Chrome, Edge, Firefox, etc.) into secure enterprise browsers on demand. Unlike the standalone Enterprise Browser, this approach leverages the browsers already installed on client devices, enhancing them with enterprise-grade security controls.</p>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-3 sm:mb-4">Transform Any Browser into a Secure Enterprise Browser</h4>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8">The Enterprise Browser Extension turns users' existing browsers (Chrome, Edge, Firefox, etc.) into secure enterprise browsers on demand. Unlike the standalone Enterprise Browser, this approach leverages the browsers already installed on client devices, enhancing them with enterprise-grade security controls.</p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                         <div class="bg-slate-800 rounded-lg p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
@@ -429,20 +456,20 @@
 
             <!-- Disposable Browser Content -->
             <div id="disposable-browser-content" class="tab-content">
-                <div class="bg-slate-700/50 rounded-lg p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-slate-700/50 rounded-lg p-4 sm:p-6 lg:p-8">
+                    <div class="flex flex-col sm:flex-row items-center mb-4 sm:mb-6 text-center sm:text-left">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-3 sm:mb-0 sm:mr-4">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold">Disposable Browser</h3>
+                        <h3 class="text-2xl sm:text-3xl font-bold">Disposable Browser</h3>
                     </div>
                     
-                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Isolated Secure Browsing</h4>
-                    <p class="text-gray-300 mb-8">Netzilo's Disposable Browser is a fully isolated browser environment that opens for one-time secure sessions and vanishes upon closing. It provides an isolated browsing session for visiting websites or SaaS apps that require extra caution, ensuring nothing from the session can harm the endpoint or leak data.</p>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-3 sm:mb-4">Isolated Secure Browsing</h4>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8">Netzilo's Disposable Browser is a fully isolated browser environment that opens for one-time secure sessions and vanishes upon closing. It provides an isolated browsing session for visiting websites or SaaS apps that require extra caution, ensuring nothing from the session can harm the endpoint or leak data.</p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                         <div class="bg-slate-800 rounded-lg p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
@@ -496,20 +523,20 @@
 
             <!-- Zero Trust Network Content -->
             <div id="network-content" class="tab-content">
-                <div class="bg-slate-700/50 rounded-lg p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-slate-700/50 rounded-lg p-4 sm:p-6 lg:p-8">
+                    <div class="flex flex-col sm:flex-row items-center mb-4 sm:mb-6 text-center sm:text-left">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-3 sm:mb-0 sm:mr-4">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold">Zero Trust Network</h3>
+                        <h3 class="text-2xl sm:text-3xl font-bold">Zero Trust Network</h3>
                     </div>
                     
-                    <h4 class="text-2xl font-semibold text-blue-400 mb-4">Zero-Trust Overlay Network</h4>
-                    <p class="text-gray-300 mb-8">Netzilo's Zero Trust Network creates a secure, ephemeral connection layer that replaces traditional VPN infrastructure with a zero-trust approach. It provides secure access to corporate resources while maintaining strict isolation and security controls.</p>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-3 sm:mb-4">Zero-Trust Overlay Network</h4>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8">Netzilo's Zero Trust Network creates a secure, ephemeral connection layer that replaces traditional VPN infrastructure with a zero-trust approach. It provides secure access to corporate resources while maintaining strict isolation and security controls.</p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                         <div class="bg-slate-800 rounded-lg p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
@@ -563,19 +590,19 @@
 
             <!-- Additional Resources Content -->
             <div id="resources-content" class="tab-content">
-                <div class="bg-slate-700/50 rounded-lg p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-slate-700/50 rounded-lg p-4 sm:p-6 lg:p-8">
+                    <div class="flex flex-col sm:flex-row items-center mb-4 sm:mb-6 text-center sm:text-left">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-3 sm:mb-0 sm:mr-4">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold">Additional Resources</h3>
+                        <h3 class="text-2xl sm:text-3xl font-bold">Additional Resources</h3>
                     </div>
                     
-                    <h4 class="text-2xl font-semibold text-blue-400 mb-8">Comprehensive Documentation and Support</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-6 sm:mb-8">Comprehensive Documentation and Support</h4>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                         <div class="bg-slate-800 rounded-lg p-6">
                             <h5 class="text-xl font-semibold mb-4">Technical Documentation</h5>
                             <p class="text-gray-400 mb-4">Access comprehensive guides, API documentation, and implementation best practices in our detailed technical library. Our documentation covers everything from initial setup to advanced configuration scenarios.</p>
@@ -706,12 +733,23 @@
                     (tabName === 'network' && buttonText === 'Zero Trust Network') ||
                     (tabName === 'resources' && buttonText === 'Additional Resources')) {
                     button.classList.add('active');
+                    
+                    // On mobile, scroll the active button into view
+                    if (window.innerWidth < 768) {
+                        button.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    }
                 }
             });
             
             // Only scroll if explicitly requested (when user clicks a tab button or card)
             if (shouldScroll) {
-                document.querySelector('.bg-slate-800.border.border-slate-700.rounded-lg.p-8').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const tabSection = document.querySelector('.bg-slate-800.border.border-slate-700.rounded-lg');
+                if (tabSection) {
+                    // Add some offset for mobile to account for sticky headers
+                    const yOffset = window.innerWidth < 768 ? -80 : -20;
+                    const y = tabSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
             }
         }
         
