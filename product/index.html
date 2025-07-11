@@ -608,7 +608,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 card-hover">
                         <!-- Gartner Peer Insights Header -->
-                        <div class="flex items-center justify-between mb-6 pb-6 border-b border-slate-700">
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-700">
                             <div class="flex items-center space-x-4">
                                 <div class="text-white">
                                     <div class="flex items-center space-x-2">
@@ -621,7 +621,7 @@
                                 <div class="h-8 w-px bg-slate-600"></div>
                                 <img src="../assets/images/netzilo_logo_blue.svg" alt="Netzilo" class="h-8">
                             </div>
-                            <div class="flex items-center space-x-2">
+                            <div class="flex items-center space-x-4">
                                 <div class="flex text-yellow-400">
                                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -639,176 +639,153 @@
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                     </svg>
                                 </div>
-                                <span class="text-2xl font-bold text-white ml-2">5</span>
+                                <span class="text-2xl font-bold text-white ml-2">5.0</span>
                             </div>
                         </div>
                         
-                        <!-- Two-Column Review Layout -->
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <!-- Left Column: Review Content -->
-                            <div class="space-y-6">
-                                <div>
-                                    <h3 class="text-2xl font-bold text-white mb-3">"Overcoming Enterprise Challenges With Netzilo's Workspace Feature"</h3>
-                                    <div class="flex items-center space-x-4 text-sm text-gray-400 mb-6">
-                                        <span>Submitted Feb 26, 2025</span>
-                                        <span>•</span>
-                                        <span>Product: Netzilo</span>
+                        <!-- Reviews Carousel -->
+                        <div class="relative">
+                            <!-- Navigation Arrows -->
+                            <button onclick="previousReview()" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-slate-700 hover:bg-slate-600 rounded-full p-2 transition-colors">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                </svg>
+                            </button>
+                            <button onclick="nextReview()" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-slate-700 hover:bg-slate-600 rounded-full p-2 transition-colors">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                            
+                            <!-- Review Slides Container -->
+                            <div class="overflow-hidden">
+                                <div id="reviewsSlider" class="flex transition-transform duration-300 ease-in-out">
+                                    <!-- Review 1 -->
+                                    <div class="w-full flex-shrink-0">
+                                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                            <!-- Left Column: Review Content -->
+                                            <div>
+                                                <h3 class="text-xl font-bold text-white mb-2">"Overcoming Enterprise Challenges With Netzilo's Workspace Feature"</h3>
+                                                <div class="text-sm text-gray-400 mb-4">Submitted Feb 26, 2025</div>
+                                                
+                                                <div class="bg-slate-700/50 rounded-lg p-4">
+                                                    <blockquote class="text-sm text-gray-300 leading-relaxed">
+                                                        "Integrating contractors from multiple organizations was a major challenge for us. We initially tried VDI and VPN solutions, but managing hundreds of apps and OS images became overwhelming, and we faced scalability issues with VPNs and some ZTNA tools. The enterprise workspace feature was a game-changer. We can run apps like Outlook and Visual Studio securely on unmanaged devices without VDIs. Netzilo has been a perfect fit for our needs, solving our scalability and security challenges in a way no other solution could."
+                                                    </blockquote>
+                                                </div>
+                                            </div>
+
+                                            <!-- Right Column: Ratings & Profile -->
+                                            <div class="space-y-4">
+                                                <!-- Compact Ratings -->
+                                                <div class="bg-slate-700/50 rounded-lg p-4">
+                                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-300">Evaluation</span>
+                                                            <span class="text-yellow-400">★★★★★ 5</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-300">Integration</span>
+                                                            <span class="text-yellow-400">★★★★★ 5</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-300">Service</span>
+                                                            <span class="text-yellow-400">★★★★★ 5</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-300">Product</span>
+                                                            <span class="text-yellow-400">★★★★★ 5</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Compact Profile -->
+                                                <div class="bg-slate-700/50 rounded-lg p-4">
+                                                    <div class="text-xs space-y-2">
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-400">Role:</span>
+                                                            <span class="text-white">Business & Product Development</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-400">Industry:</span>
+                                                            <span class="text-white">IT Services</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-400">Size:</span>
+                                                            <span class="text-white">&lt;50M USD</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="bg-slate-700/50 rounded-lg p-6">
-                                    <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
-                                        <svg class="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                        </svg>
-                                        Overall Comment
-                                    </h4>
-                                    <blockquote class="text-base text-gray-300 leading-relaxed">
-                                        "Integrating contractors from multiple organizations was a major challenge for us. We initially tried VDI and VPN solutions, but managing hundreds of apps and OS images became overwhelming, and we faced scalability issues with VPNs and some ZTNA tools. The enterprise workspace feature was a game-changer. We can run apps like Outlook and Visual Studio securely on unmanaged devices without VDIs. Netzilo has been a perfect fit for our needs, solving our scalability and security challenges in a way no other solution could."
-                                    </blockquote>
+
+                                    <!-- Review 2 -->
+                                    <div class="w-full flex-shrink-0">
+                                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                            <!-- Left Column: Review Content -->
+                                            <div>
+                                                <h3 class="text-xl font-bold text-white mb-2">"A Pioneering Advancement In The Zero Trust Ecosystem"</h3>
+                                                <div class="text-sm text-gray-400 mb-4">Submitted Feb 21, 2025</div>
+                                                
+                                                <div class="bg-slate-700/50 rounded-lg p-4">
+                                                    <blockquote class="text-sm text-gray-300 leading-relaxed">
+                                                        "We had challenging problems integrating contractors from multiple organizations. We tried VDI + VPN solutions but due to large volume of contractors, we ended up maintaining hundreds of apps and OS images with scalability issues. Netzilo was very impressive with its well-thought-out approach. It has built-in peer-to-peer ZTNA beyond anything we tested. It supports last mile data security for ANY web browser through virtualization and extensions. The enterprise workspace enabled running applications like Microsoft Outlook, Visual Studio and SAP Client with the same security layer on unmanaged devices without VDIs."
+                                                    </blockquote>
+                                                </div>
+                                            </div>
+
+                                            <!-- Right Column: Ratings & Profile -->
+                                            <div class="space-y-4">
+                                                <!-- Compact Ratings -->
+                                                <div class="bg-slate-700/50 rounded-lg p-4">
+                                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-300">Evaluation</span>
+                                                            <span class="text-yellow-400">★★★★★ 5</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-300">Integration</span>
+                                                            <span class="text-yellow-400">★★★★★ 5</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-300">Service</span>
+                                                            <span class="text-yellow-400">★★★★★ 5</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-300">Product</span>
+                                                            <span class="text-yellow-400">★★★★★ 5</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Compact Profile -->
+                                                <div class="bg-slate-700/50 rounded-lg p-4">
+                                                    <div class="text-xs space-y-2">
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-400">Role:</span>
+                                                            <span class="text-white">IT Manager</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-400">Industry:</span>
+                                                            <span class="text-white">Telecommunication</span>
+                                                        </div>
+                                                        <div class="flex justify-between">
+                                                            <span class="text-gray-400">Size:</span>
+                                                            <span class="text-white">3B - 10B USD</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Right Column: Ratings & Profile -->
-                            <div class="space-y-6">
-                                <!-- Rating Breakdown -->
-                                <div class="bg-slate-700/50 rounded-lg p-6">
-                                    <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
-                                        <svg class="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                                        </svg>
-                                        Rating Breakdown
-                                    </h4>
-                                    <div class="space-y-4">
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm font-medium text-gray-300">Evaluation & Contracting</span>
-                                            <div class="flex items-center space-x-1">
-                                                <div class="flex text-yellow-400">
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                </div>
-                                                <span class="text-sm font-bold text-white ml-1">5</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm font-medium text-gray-300">Integration & Deployment</span>
-                                            <div class="flex items-center space-x-1">
-                                                <div class="flex text-yellow-400">
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                </div>
-                                                <span class="text-sm font-bold text-white ml-1">5</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm font-medium text-gray-300">Service & Support</span>
-                                            <div class="flex items-center space-x-1">
-                                                <div class="flex text-yellow-400">
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                </div>
-                                                <span class="text-sm font-bold text-white ml-1">5</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm font-medium text-gray-300">Product Capabilities</span>
-                                            <div class="flex items-center space-x-1">
-                                                <div class="flex text-yellow-400">
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                                    </svg>
-                                                </div>
-                                                <span class="text-sm font-bold text-white ml-1">5</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Reviewer Profile -->
-                                <div class="bg-slate-700/50 rounded-lg p-6">
-                                    <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
-                                        <svg class="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                                        </svg>
-                                        Reviewer Profile
-                                    </h4>
-                                    <div class="space-y-3 text-sm">
-                                        <div class="flex justify-between">
-                                            <span class="text-gray-400">Role:</span>
-                                            <span class="text-white font-medium">Business & Product Development</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span class="text-gray-400">Industry:</span>
-                                            <span class="text-white font-medium">IT Services</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span class="text-gray-400">Function:</span>
-                                            <span class="text-white font-medium">Engineering - Other</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span class="text-gray-400">Firm Size:</span>
-                                            <span class="text-white font-medium">&lt;50M USD</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span class="text-gray-400">Deployment:</span>
-                                            <span class="text-white font-medium">On-premises</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <!-- Review Indicators -->
+                            <div class="flex justify-center mt-4 space-x-2">
+                                <button onclick="goToReview(0)" class="review-indicator w-2 h-2 rounded-full bg-blue-500 transition-all"></button>
+                                <button onclick="goToReview(1)" class="review-indicator w-2 h-2 rounded-full bg-slate-600 transition-all"></button>
                             </div>
                         </div>
 
@@ -969,6 +946,49 @@
                 mobileMenu.classList.toggle('hidden');
             }
         }
+
+        // Gartner Reviews Carousel Functionality
+        let currentReview = 0;
+        const totalReviews = 2;
+
+        function updateCarousel() {
+            const slider = document.getElementById('reviewsSlider');
+            const indicators = document.querySelectorAll('.review-indicator');
+            
+            if (slider) {
+                slider.style.transform = `translateX(-${currentReview * 100}%)`;
+            }
+            
+            indicators.forEach((indicator, index) => {
+                if (index === currentReview) {
+                    indicator.classList.remove('bg-slate-600');
+                    indicator.classList.add('bg-blue-500');
+                } else {
+                    indicator.classList.remove('bg-blue-500');
+                    indicator.classList.add('bg-slate-600');
+                }
+            });
+        }
+
+        function nextReview() {
+            currentReview = (currentReview + 1) % totalReviews;
+            updateCarousel();
+        }
+
+        function previousReview() {
+            currentReview = (currentReview - 1 + totalReviews) % totalReviews;
+            updateCarousel();
+        }
+
+        function goToReview(index) {
+            currentReview = index;
+            updateCarousel();
+        }
+
+        // Initialize carousel on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCarousel();
+        });
     </script>
 </body>
 </html>
